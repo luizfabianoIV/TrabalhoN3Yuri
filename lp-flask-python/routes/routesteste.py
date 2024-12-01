@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config.from_object('config.Config')
 db = SQLAlchemy(app)
 
-from model import Produto, Compra, Venda
+from model import Produto
 
 @app.route('/inicial', methods=['GET'])
 def paginainicial():
@@ -44,7 +44,7 @@ def categoria():
 @app.route('/carrinho-compras', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def carrinho():
     if request.method == 'GET':
-        # Retorna o carrinho de compras do usuário atual (exemplo simplificado)
+        # Retorna o carrinho de compras do usuário atual 
         return 'Carrinho de compras com produto desejado'
     elif request.method == 'POST':
         # Adiciona um item ao carrinho de compras
